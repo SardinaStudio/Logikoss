@@ -38,6 +38,11 @@
             content: "\f078"; 
         }
 
+        .fa-angle-double-right:before {
+            content: "\f101";
+            font-size: 200px;
+        }
+
         @font-face {
             font-family: 'icomoon';
             src:  url("assets/fonts/icomoon.eot?7rj5f5");
@@ -80,6 +85,7 @@
             content: "\e924";
         }
 
+    
         
         /*General*/
         * {
@@ -198,6 +204,22 @@
             border-radius: .7rem;
             color: #fff;
         }
+        
+        .btn-extra {
+            display: inline-block;
+            font-weight: 500;
+            text-align: center;
+            user-select: none;
+            background-color: #020202;
+            border: 2px solid transparent;
+            padding: 0.1rem 1.25rem;
+            width: 100%;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            border-radius: .5rem;
+            color: #efc653;
+            font-variant: all-small-caps;
+        }
 
         /*Icons*/
         .social-icons {
@@ -215,7 +237,7 @@
             height: auto;
             background: #fff;
             margin: 20px 0px;
-            padding: .8rem 1.5rem;
+            padding: .2rem 1.5rem; /*.8rem 1.5rem*/
             border-radius: 1rem;
             overflow: hidden;
             color: #505d69;
@@ -233,6 +255,14 @@
             padding: 2rem 4.5rem;
             overflow: hidden;
             color: #505d69;
+        }
+
+        .card-option-extra {
+            width:1275px;
+            height: auto;
+            background: #efc653;
+            overflow: hidden;
+            color: #000;
         }
 
         .card-inner {
@@ -253,9 +283,16 @@
         .card-caption {
             display: flex;
             border-left: 5px solid #efc653;
-            height: 200px;
+            height: 180px; /*200px*/
+            padding: 5px 0px;
         }
         
+        .card-caption-extra {
+            display: flex;
+            border-left: 5px solid #efc653;
+            height: 70px;
+        }
+
         /*Details*/
         .value {
             color: #000;
@@ -278,7 +315,7 @@
         /*Template*/
         #template {
             width: 1275px;
-            height: 1649px;
+            height: 1430px; /*1649px*/
             background-color: #d9e0e6;
             position: relative;
         }
@@ -643,7 +680,7 @@
                 </div> <!--end card featured-->                
             </div> <!--end template featured-->
 
-            <div style="margin:40px 0px"></div>
+            <div style="margin:40px 0px 0px"></div>
             <span><p><i class="fas fa-chevron-down"></i> Tenemos <span class="value" data="options" style="font-weight:800;">05</span> opciones más para ti</p></span>
             
             <div class="card-option">
@@ -1014,9 +1051,34 @@
                     </div> 
                 </div>  
             </div> <!--end card option -->
-                
+           
             </div>
         </div>
+         <!--More options-->
+         <div class="card-option-extra">
+            <div class="card-caption-extra" style="display:flex;">
+                <div style="display:flex; display:flex;width: 100%;justify-content: space-evenly;align-items: center;">
+                    <div class="col-8">
+                        <h2 class="label" style="padding-left:10px">Para ver más opciones visita nuestro sistema o nuestra app</h2>
+                        </image>
+                       
+                    </div>
+                    <div class="col-1" style="padding: 10px;">
+                        <div>
+                            <span><p><i class="fas fa-angle-double-right"></i> </p></span>
+            
+                        </div>
+                        
+                    </div>
+                    <div class="col-3" style="padding: 10px;">
+                        <div>
+                            <a href="https:/sistema.logikoss.com"><button type="button" class="btn-extra">Visita el sistema</button></a>
+                        </div>
+                        
+                    </div>
+                </div> 
+            </div>  
+        </div> <!--end card option -->
         <div id="templateFooter">
             <div id="footerContent">
                 <div class="spacerLine"></div>
