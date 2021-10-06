@@ -10,6 +10,27 @@
 
         /*Fonts & Icons*/
         @font-face {
+            font-family: 'Helvetica Condensed';
+            font-style: normal;
+            font-weight: 100;
+            font-display: block;
+            src: url("assets/fonts/helvetica_condensed.woff");
+            src: url("assets/fonts/helvetica_condensed.woff?#iefix") format("embedded-opentype"), url("../fonts/helvetica_condensed.woff2") 
+                format("woff2"), url("assets/fonts/helvetica_condensed.ttf") 
+                format("truetype");
+        }
+
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 100;
+            font-display: block;
+            src: url("assets/fonts/inter-regular.woff");
+            src: url("assets/fonts/inter-regular.woff?#iefix") format("embedded-opentype"), url("../fonts/inter-regular.woff2") 
+                format("woff2"), url("assets/fonts/inter-regular.woff"); 
+        }
+
+        @font-face {
             font-family: 'Font Awesome 5 Free';
             font-style: normal;
             font-weight: 900;
@@ -65,7 +86,7 @@
             line-height: 1;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            font-size: 42px;
+            font-size: 35px  /*42px*/;
             color: #efc653;
         }
 
@@ -111,7 +132,7 @@
             height: 1649px;
             padding: 0;
             margin: 0;
-            font-family: "Inter", sans-serif;
+            font-family: "Helvetica Condensed", sans-serif;
             background-color:#d9e0e6;
         }
 
@@ -127,6 +148,13 @@
             color: #000;
             font-size:28px;
         }
+        
+        h4 {
+            font-weight: bold;
+            color: #fff;
+            font-size:20px;
+        }
+
         h5 {
             font-weight: 200;
             color: #505d69;
@@ -198,7 +226,6 @@
             border: 2px solid transparent;
             padding: 0.47rem 0.75rem;
             width: 100%;
-            margin-bottom: 10px;
             font-size: 1.2rem;
             line-height: 1.5;
             border-radius: .7rem;
@@ -232,12 +259,25 @@
         }
 
          /*Cards*/
-        .card-option {
+         .card-option-data {
             width: 1105px;
             height: auto;
             background: #fff;
             margin: 20px 0px;
-            padding: .2rem 1.5rem; /*.8rem 1.5rem*/
+            padding: 0.5rem 1.5rem; /*.8rem 1.5rem*/
+            border-radius: 1rem;
+            overflow: hidden;
+            color: #505d69;
+            -webkit-box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+         .card-option {
+            width: 1105px;
+            height: auto;
+            background: #fff;
+            margin: 20px 0px;
+            padding: 0rem 1.5rem; /*.8rem 1.5rem*/
             border-radius: 1rem;
             overflow: hidden;
             color: #505d69;
@@ -246,15 +286,16 @@
         }
 
         .card-featured {
-            width: 1020px;
-            height: 240px;
+            width: 1015px;
+            height: 280px;
             background-image: url("assets/images/featured_card.png");
             background-size: cover;
             background-repeat: no-repeat;
             margin: 0px;
-            padding: 2rem 4.5rem;
+            padding: 1.3rem 4.5rem;
             overflow: hidden;
             color: #505d69;
+            background-position: bottom;
         }
 
         .card-option-extra {
@@ -268,7 +309,7 @@
         .card-inner {
             width: 840px;
             border-radius: 0px;
-            margin: 15px 0px 20px;
+            margin: 10px 0px 20px;
             overflow: hidden;
             color: #505d69;
             height: auto;
@@ -283,7 +324,7 @@
         .card-caption {
             display: flex;
             border-left: 5px solid #efc653;
-            height: 180px; /*200px*/
+            height: 155px; /*200px*/
             padding: 5px 0px;
         }
         
@@ -291,6 +332,23 @@
             display: flex;
             border-left: 5px solid #efc653;
             height: 70px;
+        }
+        .card-caption-density {
+            display: flex;
+            border-left: 5px solid #50ba47;
+            height: 185px;
+            padding: 5px 0px;
+        }
+
+        .card-density {
+            width: 1105px;
+            height: auto;
+            background: #50ba47;
+            margin: 0;
+            padding: .5rem 1.5rem;
+            overflow: hidden;
+            color: #fff;
+            /*border-radius: 0 0 10px 10px;*/
         }
 
         /*Details*/
@@ -307,28 +365,59 @@
              line-height: 1.2;
         }
 
+        .value-highlight-strike {
+             font-size: 20px;
+             line-height: 1.2;
+             position: relative;
+        }
+
+        .value-highlight-strike::before{
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 50%;
+            right: 0;
+            border-top: 1.5px solid;
+            border-color: red;
+            
+            -webkit-transform:rotate(-5deg);
+            -moz-transform:rotate(-5deg);
+            -ms-transform:rotate(-5deg);
+            -o-transform:rotate(-5deg);
+            transform:rotate(-5deg);
+
+        }
+
         .card-caption .value{
             font-weight: bold;
             font-size: 22px;
+        }
+
+        .card-caption-density .value{
+            font-weight: bold;
+            font-size: 22px;
+        }
+        .unit {
+            font-variant: all-small-caps;
         }
         
         /*Template*/
         #template {
             width: 1275px;
-            height: 1430px; /*1649px*/
+            height: 1440px; /*1649px*/
             background-color: #d9e0e6;
             position: relative;
         }
     
         #airline {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             border-radius: 100px;
         }
 
         #airline-2 {
-            width: 120px;
-            height: 120px;
+            width: 80px;
+            height: 80px;
             border-radius: 100px;
         }
 
@@ -347,14 +436,14 @@
             text-align: right;
             font-size: 16px;
             line-height: 20px;
-            margin-bottom: 10px;
+            margin-bottom: 7px;
         }
 
         #ClientName {
             text-align: right;
             font-size: 16px;
             line-height: 20px;
-            margin-bottom: 10px
+            margin-bottom: 7px
         }
 
         #templateHeader {
@@ -424,7 +513,7 @@
        
         #templateFooter {
             width: 1275px;
-            height: 160px;
+            height: 150px /*160px*/;
             position: relative;
             background-image: url("assets/images/footer_bg.png");
             background-size: cover;
@@ -433,7 +522,7 @@
     
         #templateFooter #footerContent {
             width: 1175px;
-            height: 160px;
+            height: 150px /*160px*/;
             position: absolute;
             top: 0px;
             left: 0px;
@@ -505,7 +594,7 @@
 
         <div id="templateBody">
             <div id="templateFeatured">
-                <div class="card-option" style="margin:0px !important; border-radius: 15px 15px 0px 0px;">
+                <div class="card-option-data" style="margin:0px !important; border-radius: 15px 15px 0px 0px;">
                     <div style="display:flex">
                         <table style="width: 270px">
                             <thead>
@@ -517,11 +606,11 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <td class="value">Shanghai - CN</td>                            
+                                <td class="value-number">Shanghai - CN</td>                            
                             </tr>                        
                             </tbody>
                         </table>
-                        <table style="width: 270px; border-left: 2px dotted">
+                        <table style="width: 270px; border-left: 2px dotted;border-color: #d2d2d2;">
                             <thead>
                                 <th>
                                     <div class="social-icons">
@@ -531,11 +620,12 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <td class="value">Ciudad de México - MX</td>                            
+                                <td class="value-number">Ciudad de México - MX</td>                            
                             </tr>                        
                             </tbody>
                         </table>
-                        <table style="width: 145px; border-left: 2px dotted">
+                       
+                        <table style="width: 145px; border-left: 2px dotted;border-color: #d2d2d2;">
                             <thead>
                                 <th>
                                     <div class="social-icons">
@@ -545,11 +635,25 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <td class="value">EXM</td>                            
+                                <td class="value-number">EXW</td>                            
                             </tr>                        
                             </tbody>
                         </table>
-                        <table style="width: 150px; border-left: 2px dotted">
+                        <table style="width: 145px; border-left: 2px dotted;border-color: #d2d2d2;">
+                            <thead>
+                                <th>
+                                    <div class="social-icons">
+                                        <i class="fas icon-incoterm"></i><label> No. Piezas</label>
+                                     </div> 
+                                </th>                                            
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="value-number">200</td>                            
+                            </tr>                        
+                            </tbody>
+                        </table>
+                        <table style="width: 150px; border-left: 2px dotted;border-color: #d2d2d2;">
                             <thead>
                                 <th>
                                     <div class="social-icons">
@@ -559,11 +663,11 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <td class="value-number">200.00 Kg</td>                            
+                                <td class="value-number">200.00 <span class="unit">Kg</span></td>                            
                             </tr>                        
                             </tbody>
                         </table>
-                        <table style="width: 150px; border-left: 2px dotted">
+                        <table style="width: 150px; border-left: 2px dotted;border-color: #d2d2d2;">
                             <thead>
                                 <th>
                                     <div class="social-icons">
@@ -573,12 +677,12 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <td class="value-number">200 KG</td>                            
+                                <td class="value-number">200 <span class="unit">Kg</span></td>                            
                             </tr>                        
                             </tbody>
                         </table>
                         
-                        <table style="width: 120px; border-left: 2px dotted">
+                        <table style="width: 120px; border-left: 2px dotted;border-color: #d2d2d2;">
                             <thead>
                                 <th>
                                     <div class="social-icons">
@@ -592,14 +696,33 @@
                             </tr>                        
                             </tbody>
                         </table>
+                        <table style="width: 120px; border-left: 2px dotted;border-color: #d2d2d2;">
+                            <thead>
+                                <th>
+                                    <div class="social-icons">
+                                        <i class="fas icon-volumen"></i><label> Densidad</label>
+                                     </div> 
+                                </th>                                            
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="value-number">170 <span class="unit">Kg/CBM</span></td>                            
+                            </tr>                        
+                            </tbody>
+                        </table>
                     </div>         
                 </div> <!--end card option -->
+                <div class="card-density">
+                    <div style="display:block; text-align:center;">
+                        <h4>Descuento de densidad <span>/ Carga Densa</span></h4>
+                    </div>
+                </div>
                 <div class="card-featured">
-                    <div style="display:flex">
+                    <div style="display:flex; align-items: center;">
                         <image id="airline" src="assets/images/Partners_logo5.jpg" alt="Airline">
                         </image>
-                        <table style="width:400px">
-                            <thead>
+                        <table style="width:470px">
+                            <!--<thead>
                                 <th style="height: 10px">
                                     <h5 class="label" style="padding-left:10px; color:#000">Fecha de vuelo</h5>
                                 </th>
@@ -610,10 +733,19 @@
                                         <h3 class="value">27 Mayo 2021</h3>
                                     </td>
                                 </tr>
-                            </tbody>
+                            </tbody>-->
+
+                            <thead style="display: flex;">
+                                <th style="height: 10px">
+                                    <h5 class="label" style="padding-left:10px; color:#000">Fecha de vuelo</h5>
+                                </th>
+                                <td>
+                                    <h3 class="value">27 Mayo 2021</h3>
+                                </td>
+                            </thead>   
                         </table>
-                        <table style="width:400px">
-                            <thead>
+                        <table style="width:370px">
+                            <!--<thead>
                                 <th style="height: 10px">
                                     <h5 class="label" style="padding-left:10px; color:#000">Ruta</h5>
                                 </th>
@@ -624,7 +756,15 @@
                                         <h3 class="value" data="route">PVG > ICN > ME</h3>
                                     </td>
                                 </tr>
-                            </tbody>
+                            </tbody>-->
+                            <thead style="display: flex;">
+                                <th style="height: 10px">
+                                    <h5 class="label" style="padding-left:10px; color:#000">Ruta</h5>
+                                </th>
+                                <td>
+                                    <h3 class="value" data="route">PVG > ICN > ME</h3>
+                                </td>
+                            </thead>  
                         </table>
                     </div>  
                     <div class="card-inner">                       
@@ -654,10 +794,24 @@
                                 </thead>
                                 <tbody  style="color:#000;">
                                 <tr>
-                                    <td class="value-highlight" data="rate">$240,000 USD</td>                           
+                                    <td data="rate"><span class="value-highlight-strike" style="color: #9c9c9c;">$20,030 <span class="unit">USD</span></span> </td>                           
+                                </tr>   
+                                                      
+                                </tbody>
+                                <thead style="height:40px">
+                                    <th>
+                                        <div class="social-icons">
+                                            <label>Tarifa descuento por KG (USD/Kg)</label>
+                                         </div> 
+                                    </th>                                            
+                                </thead>
+                                <tbody  style="color:#000;">
+                                <tr>
+                                    <td class="value-highlight" data="rate" >$19,040  <span class="unit">USD</span></td>                           
                                 </tr>                        
                                 </tbody>
                             </table>
+                        
                             <table style="width: 280px; background-color:#000; border-left: 2px dotted">
                                 <thead>
                                     <th>
@@ -668,20 +822,34 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td class="value-highlight" style="color:#efc653" data="total">$240,000 USD</td>                            
-                                </tr>                        
+                                    <td class="value-highlight" style="color:#efc653; font-size:20px" data="total"><span class="value-highlight-strike">$220,0200  <span class="unit">USD</span></td>                            
+                                </tr>                
+                                </tbody>
+                                <br>
+                                <thead style="height: 40px;">
+                                    <th>
+                                        <div class="social-icons">
+                                            <label style="color:#fff">Tarifa con descuento</label>
+                                         </div> 
+                                    </th>                                            
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="value-highlight" style="color:#fff;background-color: #50ba47;border-radius: 20px;" data="total">$204,100 <span class="unit">USD</span></td>                            
+                                </tr>                 
                                 </tbody>
                             </table>
-                        </div>         
+                        </div>  
+                             
                     </div>
-                    <div style="width:250px">
-                        <a href="/"><button type="button" class="btn">Seleccionar</button></a>
-                    </div>
+                    <div style="width:250px; margin-top:20px;">
+                        <a href="/"><button type="button" class="btn">Ver más</button></a>
+                    </div>  
                 </div> <!--end card featured-->                
             </div> <!--end template featured-->
 
-            <div style="margin:40px 0px 0px"></div>
-            <span><p><i class="fas fa-chevron-down"></i> Tenemos <span class="value" data="options" style="font-weight:800;">05</span> opciones más para ti</p></span>
+            <div style="margin:30px 0px 0px"></div>
+            <span><p><i class="fas fa-chevron-down"></i> Tenemos <span class="value" data="options" style="font-weight:800;">04</span> opciones más para ti</p></span>
             
             <div class="card-option">
                 <div class="card-caption" style="display:flex;">
@@ -690,39 +858,32 @@
                             <image id="airline-2" src="assets/images/Partners_logo5.jpg" alt="Airline">
                             </image>
                             <div>
-                                <a href="/"><button type="button" class="btn">Seleccionar</button></a>
+                                <a href="/"><button type="button" class="btn">Ver más</button></a>
                             </div>
                         </div>
                         <div class="col-10" style="padding: 10px;">
                             <div style="display:flex;border-bottom: 2px solid #eaeaea;padding: 10px 0px;">
-                                <table style="width:400px">
-                                    <thead>
+                                <table style="width:450px">
+                                    <thead style="display: flex;">
                                         <th>
                                             <h5 class="label" style="padding-left:10px">Fecha de vuelo</h5>
                                         </th>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <p class="value">27 Mayo 2021</p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
+                                        <td>
+                                            <p class="value">27 Mayo 2021</p>
+                                        </td>
+                                    </thead>                                    
                                 </table>
         
-                                <table style="width:400px; width:400px;text-align:right;">
-                                    <thead>
+                                <table style="width:350px; justify-content: flex-end;display: flex;">
+                                    <thead style="display: flex;">
                                         <th>
                                             <h5 class="label" style="padding-left:10px">Ruta</h5>
                                         </th>
+                                        <td>
+                                            <p class="value" data="route" style="color: #10cebc">PVG > ICN > ME</p>
+                                        </td>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <p class="value" data="route" style="color: #10cebc">PVG > ICN > ME</p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
+                                
                                 </table>
                             </div> 
                             <div style="display:flex;padding: 10px 0px;">
@@ -751,7 +912,7 @@
                                     </thead>
                                     <tbody  style="color:#000;">
                                     <tr>
-                                        <td class="value-highlight" data="rate">$240,000 USD</td>                           
+                                        <td class="value-highlight" data="rate">$240,000 <span class="unit">USD</span></td>                           
                                     </tr>                        
                                     </tbody>
                                 </table>
@@ -765,7 +926,7 @@
                                     </thead>
                                     <tbody  style="color:#000;">
                                     <tr>
-                                        <td class="value-highlight" data="total">$240,000 USD</td>                            
+                                        <td class="value-highlight" data="total">$240,000 <span class="unit">USD</span></td>                            
                                     </tr>                        
                                     </tbody>
                                 </table>
@@ -782,39 +943,32 @@
                             <image id="airline-2" src="assets/images/Partners_logo5.jpg" alt="Airline">
                             </image>
                             <div>
-                                <a href="/"><button type="button" class="btn">Seleccionar</button></a>
+                                <a href="/"><button type="button" class="btn">Ver más</button></a>
                             </div>
                         </div>
                         <div class="col-10" style="padding: 10px;">
                             <div style="display:flex;border-bottom: 2px solid #eaeaea;padding: 10px 0px;">
-                                <table style="width:400px">
-                                    <thead>
+                                <table style="width:450px">
+                                    <thead style="display: flex;">
                                         <th>
                                             <h5 class="label" style="padding-left:10px">Fecha de vuelo</h5>
                                         </th>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <p class="value">27 Mayo 2021</p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
+                                        <td>
+                                            <p class="value">27 Mayo 2021</p>
+                                        </td>
+                                    </thead>                                    
                                 </table>
         
-                                <table style="width:400px; width:400px;text-align:right;">
-                                    <thead>
+                                <table style="width:350px; justify-content: flex-end;display: flex;">
+                                    <thead style="display: flex;">
                                         <th>
                                             <h5 class="label" style="padding-left:10px">Ruta</h5>
                                         </th>
+                                        <td>
+                                            <p class="value" data="route" style="color: #10cebc">PVG > ICN > ME</p>
+                                        </td>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <p class="value" data="route" style="color: #10cebc">PVG > ICN > ME</p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
+                                
                                 </table>
                             </div> 
                             <div style="display:flex;padding: 10px 0px;">
@@ -843,7 +997,7 @@
                                     </thead>
                                     <tbody  style="color:#000;">
                                     <tr>
-                                        <td class="value-highlight" data="rate">$240,000 USD</td>                           
+                                        <td class="value-highlight" data="rate">$240,000 <span class="unit">USD</span></td>                           
                                     </tr>                        
                                     </tbody>
                                 </table>
@@ -857,7 +1011,7 @@
                                     </thead>
                                     <tbody  style="color:#000;">
                                     <tr>
-                                        <td class="value-highlight" data="total">$240,000 USD</td>                            
+                                        <td class="value-highlight" data="total">$240,000 <span class="unit">USD</span></td>                            
                                     </tr>                        
                                     </tbody>
                                 </table>
@@ -867,46 +1021,45 @@
                     </div> 
                 </div>  
             </div> <!--end card option -->
+            <!--card option density-->
             <div class="card-option">
-                <div class="card-caption" style="display:flex;">
-                    <div style="display:flex; display:flex;width: 100%;justify-content: space-evenly;align-items: center;">
+                <div class="card-density">
+                    <div style="display:block; text-align:center;">
+                        <h4>Descuento de densidad<span> / Carga Volumétrica</span></h4>
+                    </div>
+                </div>
+                <div class="card-caption-density" style="display:flex;">
+                    <div style="display:flex; width: 100%;justify-content: space-evenly;align-items: center;">
                         <div class="col-2">
                             <image id="airline-2" src="assets/images/Partners_logo5.jpg" alt="Airline">
                             </image>
                             <div>
-                                <a href="/"><button type="button" class="btn">Seleccionar</button></a>
+                                <a href="/"><button type="button" class="btn">Ver más</button></a>
                             </div>
                         </div>
                         <div class="col-10" style="padding: 10px;">
                             <div style="display:flex;border-bottom: 2px solid #eaeaea;padding: 10px 0px;">
-                                <table style="width:400px">
-                                    <thead>
+                                <table style="width:450px">
+                                    <thead style="display: flex;">
                                         <th>
                                             <h5 class="label" style="padding-left:10px">Fecha de vuelo</h5>
                                         </th>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <p class="value">27 Mayo 2021</p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
+                                        <td>
+                                            <p class="value">27 Mayo 2021</p>
+                                        </td>
+                                    </thead>                                    
                                 </table>
         
-                                <table style="width:400px; width:400px;text-align:right;">
-                                    <thead>
+                                <table style="width:350px; justify-content: flex-end;display: flex;">
+                                    <thead style="display: flex;">
                                         <th>
                                             <h5 class="label" style="padding-left:10px">Ruta</h5>
                                         </th>
+                                        <td>
+                                            <p class="value" data="route" style="color: #10cebc">PVG > ICN > ME</p>
+                                        </td>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <p class="value" data="route" style="color: #10cebc">PVG > ICN > ME</p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
+                                
                                 </table>
                             </div> 
                             <div style="display:flex;padding: 10px 0px;">
@@ -933,32 +1086,62 @@
                                                 </div> 
                                         </th>                                            
                                     </thead>
-                                    <tbody  style="color:#000;">
-                                    <tr>
-                                        <td class="value-highlight" data="rate">$240,000 USD</td>                           
-                                    </tr>                        
+                                    <tbody style="color:#000;">
+                                        <tr>
+                                            <td class="value-highlight" style="font-size:20px;color: #9c9c9c;" data="total"><span class="value-highlight-strike">$220,0200  <span class="unit">USD</span></td>                            
+                                        </tr>       
+                                    </tbody>
+                                    <thead>
+                                        <th>
+                                            <div class="social-icons">
+                                                <label>Tarifa por KG descuento (USD/Kg)</label>
+                                                </div> 
+                                        </th>                                            
+                                    </thead>
+                                    <tbody style="color:#000;">
+                                        <tr>
+                                            <td class="value-highlight" data="rate">$240,000 <span class="unit">USD</span></td>                           
+                                        </tr>
+                                                             
                                     </tbody>
                                 </table>
-                                <table style="width: 280px;border-left: 2px dotted">
+                                
+                                <table style="width: 280px; background-color: #fff; border-left: 2px dotted">
+                                    
                                     <thead>
                                         <th>
                                             <div class="social-icons">
                                                 <label>Tarifa total</label>
-                                                </div> 
+                                             </div> 
                                         </th>                                            
                                     </thead>
-                                    <tbody  style="color:#000;">
+                                    <tbody>
                                     <tr>
-                                        <td class="value-highlight" data="total">$240,000 USD</td>                            
-                                    </tr>                        
+                                        <td class="value-highlight" style="font-size:20px" data="total"><span class="value-highlight-strike">$220,0200  <span class="unit">USD</span></td>                            
+                                    </tr>                
+                                    </tbody>
+                                    <br>
+                                    <thead style="height: 30px;">
+                                        <th>
+                                            <div class="social-icons">
+                                                <label>Tarifa con descuento</label>
+                                             </div> 
+                                        </th>                                            
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="value-highlight" style="color:#fff;background-color: #50ba47;border-radius: 20px;" data="total">$204,100 <span class="unit">USD</span></td>                            
+                                    </tr>                 
                                     </tbody>
                                 </table>
+                                
+                                
                             </div> 
                             
                         </div>
                     </div> 
                 </div>  
-            </div> <!--end card option -->
+            </div> <!--end card option density -->
             <div class="card-option">
                 <div class="card-caption" style="display:flex;">
                     <div style="display:flex; display:flex;width: 100%;justify-content: space-evenly;align-items: center;">
@@ -966,39 +1149,32 @@
                             <image id="airline-2" src="assets/images/Partners_logo5.jpg" alt="Airline">
                             </image>
                             <div>
-                                <a href="/"><button type="button" class="btn">Seleccionar</button></a>
+                                <a href="/"><button type="button" class="btn">Ver más</button></a>
                             </div>
                         </div>
                         <div class="col-10" style="padding: 10px;">
                             <div style="display:flex;border-bottom: 2px solid #eaeaea;padding: 10px 0px;">
-                                <table style="width:400px">
-                                    <thead>
+                                <table style="width:450px">
+                                    <thead style="display: flex;">
                                         <th>
                                             <h5 class="label" style="padding-left:10px">Fecha de vuelo</h5>
                                         </th>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <p class="value">27 Mayo 2021</p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
+                                        <td>
+                                            <p class="value">27 Mayo 2021</p>
+                                        </td>
+                                    </thead>                                    
                                 </table>
         
-                                <table style="width:400px; width:400px;text-align:right;">
-                                    <thead>
+                                <table style="width:350px; justify-content: flex-end;display: flex;">
+                                    <thead style="display: flex;">
                                         <th>
                                             <h5 class="label" style="padding-left:10px">Ruta</h5>
                                         </th>
+                                        <td>
+                                            <p class="value" data="route" style="color: #10cebc">PVG > ICN > ME</p>
+                                        </td>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <p class="value" data="route" style="color: #10cebc">PVG > ICN > ME</p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
+                                
                                 </table>
                             </div> 
                             <div style="display:flex;padding: 10px 0px;">
@@ -1027,7 +1203,7 @@
                                     </thead>
                                     <tbody  style="color:#000;">
                                     <tr>
-                                        <td class="value-highlight" data="rate">$240,000 USD</td>                           
+                                        <td class="value-highlight" data="rate">$240,000 <span class="unit">USD</span></td>                           
                                     </tr>                        
                                     </tbody>
                                 </table>
@@ -1041,7 +1217,7 @@
                                     </thead>
                                     <tbody  style="color:#000;">
                                     <tr>
-                                        <td class="value-highlight" data="total">$240,000 USD</td>                            
+                                        <td class="value-highlight" data="total">$240,000 <span class="unit">USD</span></td>                            
                                     </tr>                        
                                     </tbody>
                                 </table>
